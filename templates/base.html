@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>URL Shortener</title>
+    </head>
+    <body>
+        <a href="{{ url_for('index') }}">URL Shortener</a>
+        <a href="{{ url_for('dashboard') }}">Dashbord</a>
+        <hr>
+        {% block content %}{% endblock %}
+    </body>
+</html>

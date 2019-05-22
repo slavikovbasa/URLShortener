@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <div class="container">
+      <form id="urlForm" action="" method="post" novalidate>
+          <!--<input id="url_input" name="url_input" placeholder="URL goes here">
+          <input type="submit" value="Shorten">-->
+          {{ form.url(size=32, placeholder='URL goes here') }}
+          {{ form.submit() }}
+      </form>
+  </div>
+{% endblock %} 
