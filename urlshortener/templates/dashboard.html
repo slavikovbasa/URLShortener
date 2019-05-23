@@ -1,7 +1,10 @@
 {% extends "base.html" %}
 
 {% block content %}
+  <h1>{{ user.username }}</h1>>
   <div class="container">
-      'Yaaaaay {{ user.username }}'
+    {% for index, link in enumerate(user.links) %}
+      <div><p>{{ index }} : {{ link.shortened }} : {{ link.full }} : {{ link.count }}</p></div>
+    {% endfor %}
   </div>
-{% endblock %} 
+{% endblock %}
