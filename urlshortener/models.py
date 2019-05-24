@@ -11,7 +11,7 @@ class Link(db.Model):
     count = db.Column(db.Integer, default=0)
 
     def __repr__(self):
-        return f'<Full link: "{self.full}", short: "{self.short}">'
+        return '<Link "{}">'.format(self.short)
 
 
 class User(UserMixin, db.Model):
@@ -21,7 +21,7 @@ class User(UserMixin, db.Model):
     links = db.relationship('Link', backref = 'author', lazy=True)
 
     def __repr__(self):
-        return f'<User {self.username}>'
+        return '<User {}>'.format(self.username)
 
     def set_password(self, password):
         self.password = generate_password_hash(password)
