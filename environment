@@ -1,2 +1,0 @@
-export DATABASE_URL=postgres://urlshort:qwerty123@localhost:5432/urlshort
-export SECRET_KEY=gF1tGr6Rh75P+u4rEouCisLm4/3iQUGSDQYuWEfcwRw=
