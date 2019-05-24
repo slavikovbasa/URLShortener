@@ -4,6 +4,7 @@
 from .forms import LoginForm, RegistrationForm
 from .shorturl import encode, mix_number
 from flask_login import current_user, login_user, logout_user
+from flask_migrate import upgrade
 from flask import render_template, redirect, url_for, flash, jsonify, request
 from urlshortener import app, db
 from urlshortener.models import User, Link
