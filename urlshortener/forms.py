@@ -1,14 +1,7 @@
 from .models import User
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, SubmitField, BooleanField
-from wtforms.validators import DataRequired, EqualTo, ValidationError, URL
-
-class URLForm(FlaskForm):
-    class Meta:
-        csrf = False
-    
-    url = StringField('URL goes here', [DataRequired(), URL()])
-    submit = SubmitField('Shorten')
+from wtforms.validators import DataRequired, EqualTo, ValidationError
 
 
 class LoginForm(FlaskForm):
@@ -22,12 +15,15 @@ class LoginForm(FlaskForm):
 
 
 class RegistrationForm(FlaskForm):
+    class Meta:
+        csrf = False
+    
     username = StringField('Username', validators=[DataRequired()])
     password = PasswordField('Password', validators=[DataRequired()])
     password2 = PasswordField(
         'Repeat Password', validators=[DataRequired(), EqualTo('password')]
     )
-    submit = SubmitField('Register')
+    submit = SubmitField('Sign Up')
 
     def validate_username(self, username):
         user = User.query.filter_by(username=username.data).first()

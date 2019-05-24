@@ -2,16 +2,24 @@
 <html>
     <head>
         <title>URL Shortener</title>
-        <script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/main.css') }}">
     </head>
     <body>
-        <a href="{{ url_for('index') }}">URL Shortener</a>
-        {% if current_user.is_anonymous %}
-            <a href="{{ url_for('login') }}">Log in</a>
-        {% else %}
-            <a href="{{ url_for('dashboard') }}">Dashbord</a>
-            <a href="{{ url_for('logout') }}">Log out</a>
-        {% endif %}
+        <div>
+            <div style="display: inline;">
+                <a href="{{ url_for('index') }}">
+                    <img alt="URL Shortener" src="{{ url_for('static', filename='res/logo.png') }}" height="35">
+                </a>
+            </div>
+            <div style="display: inline;">
+                {% if current_user.is_anonymous %}
+                    <a class="header-links" href="{{ url_for('login') }}">Log_in</a>
+                {% else %}
+                    <a class="header-links" href="{{ url_for('logout') }}">Log_out</a>
+                    <a class="header-links" href="{{ url_for('dashboard') }}">Dashboard</a>
+                {% endif %}
+            </div>
+        </div>
         <hr>
         {% block content %}{% endblock %}
     </body>

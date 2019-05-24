@@ -1,3 +1,5 @@
+'''Package init file. Contains shared objects'''
+
 from flask import Flask
 from .config import Config
 from flask_sqlalchemy import SQLAlchemy

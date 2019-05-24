@@ -1,10 +1,25 @@
 {% extends "base.html" %}
 
 {% block content %}
-  <h1>{{ user.username }}</h1>>
-  <div class="container">
-    {% for index, link in enumerate(user.links) %}
-      <div><p>{{ index }} : {{ link.shortened }} : {{ link.full }} : {{ link.count }}</p></div>
-    {% endfor %}
-  </div>
+    <div class="center">
+        <h1>{{ user.username }} statistics</h1>
+        <table align="center">
+            {% if user.links %}
+            <tr>
+                <th>No.</th>
+                <th>Short link</th>
+                <th>Full link</th>
+                <th>Click count</th>
+            </tr>
+            {% endif %}
+            {% for link in user.links %}
+            <tr>
+                <td>{{ loop.index }}</td>
+                <td>/{{ link.short }}</td>
+                <td>{{ link.full }}</td>
+                <td>{{ link.count }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
 {% endblock %}

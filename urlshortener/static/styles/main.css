@@ -1,0 +1,44 @@
+* {
+    font-family: monospace;
+}
+
+.center {
+    text-align: center;
+}
+
+.error-msg {
+    color: red;
+}
+
+#url-input-container {
+    padding-top: 50px;
+}
+
+.url-input-gadgets {
+    font-size: 2em;
+    border-radius: 5px;
+    box-shadow: none;
+}
+
+table, td, th {
+    table-layout: fixed;
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+table td {
+    word-wrap: break-word;
+    max-width: 50vw;
+}
+
+a:link, a:visited, a:hover, a:active  {
+    text-decoration: none;
+    font-weight: bold;
+    color: black;
+}
+
+.header-links {
+    font-size: 2em;
+    float: right;
+    margin-right: 30px;
+}
